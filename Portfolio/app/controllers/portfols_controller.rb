@@ -35,6 +35,10 @@ class PortfolsController < ApplicationController
     end
   end
 
+  def show
+    @portfol = Portfol.find_by(id: params[:id])
+  end
+
   private
   def portfol_params
     params.require(:portfol).permit(:title, :subtitle, :body, :main_image, :thumb_image)

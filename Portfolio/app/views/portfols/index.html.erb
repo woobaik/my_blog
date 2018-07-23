@@ -2,10 +2,12 @@
 
 <a href="portfols/new">Create New Item</a>
 
-<%= @portfols.each do |portfol| %>
-  <p><%= portfol.title %></p>
+<% @portfols.each do |portfol| %>
+  <p><%= link_to portfol.title, portfol_path(portfol) %></p>
   <p><%= portfol.subtitle %></p>
   <p><%= portfol.body %></p>
   <p><%= image_tag(portfol.thumb_image) if portfol.thumb_image%></p>
+  <%= link_to "Edit", edit_portfol_path(portfol ) %>
+  <a href="/portfols/<%= portfol.id %>/edit">zzz</a>
 
 <% end %>
