@@ -4,6 +4,6 @@
   <p><%= portfol.title %></p>
   <p><%= portfol.subtitle %></p>
   <p><%= portfol.body %></p>
-  <p><%= image_tag(portfol.thumb_image) %></p>
+  <p><%= image_tag(portfol.thumb_image) if portfol.thumb_image%></p>
 
 <% end %>
