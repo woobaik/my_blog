@@ -20,6 +20,21 @@ class PortfolsController < ApplicationController
     end
   end
 
+  def edit
+    @portfol = Portfol.find_by_id(params[:id])
+  end
+
+  def update
+    @portfol = Portfol.find_by(id: params[:id])
+    respond_to do |format|
+      if @portfol.update(portfol_params)
+        format.html { redirect_to portfols_path, notice: 'Your Portfolio item is updated.'}
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
   private
   def portfol_params
     params.require(:portfol).permit(:title, :subtitle, :body, :main_image, :thumb_image)
