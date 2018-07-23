@@ -8,6 +8,6 @@
   <p><%= portfol.body %></p>
   <p><%= image_tag(portfol.thumb_image) if portfol.thumb_image%></p>
   <%= link_to "Edit", edit_portfol_path(portfol ) %>
-  <a href="/portfols/<%= portfol.id %>/edit">zzz</a>
+  <%= link_to "Delete", portfol_url(portfol), method: :delete, data: {confirm: "Are you sure?"} %>
 
 <% end %>

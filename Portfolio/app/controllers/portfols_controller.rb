@@ -39,6 +39,15 @@ class PortfolsController < ApplicationController
     @portfol = Portfol.find_by(id: params[:id])
   end
 
+  def destroy
+    @portfol = Portfol.find_by(id: params[:id])
+    @portfol.destroy
+    respond_to do |format|
+      format.html { redirect_to portfols_url, notice: 'Your Item is removed'}
+    end
+
+  end
+
   private
   def portfol_params
     params.require(:portfol).permit(:title, :subtitle, :body, :main_image, :thumb_image)
