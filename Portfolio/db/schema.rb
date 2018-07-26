@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_065316) do
+ActiveRecord::Schema.define(version: 2018_07_25_065811) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_07_25_065316) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.integer "post_status", default: 0
+    t.integer "topic_id"
+    t.index ["topic_id"], name: "index_blogs_on_topic_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
