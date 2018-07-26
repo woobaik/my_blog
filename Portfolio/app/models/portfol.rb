@@ -1,4 +1,5 @@
 class Portfol < ApplicationRecord
+  include Placeholder
   validates :title, presence: true
   validates :subtitle, presence: true
   validates :main_image, presence: true
@@ -13,7 +14,7 @@ class Portfol < ApplicationRecord
   after_initialize :set_default
 
   def set_default
-    self.main_image ||= "http://via.placeholder.com/600x400"
-    self.thumb_image ||= "http://via.placeholder.com/350x250"
+    self.main_image ||= Placeholder.image_generator(600, 450)
+    self.thumb_image ||= Placeholder.image_generator(350, 250)
   end
 end
