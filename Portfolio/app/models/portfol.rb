@@ -3,4 +3,10 @@ class Portfol < ApplicationRecord
   validates :subtitle, presence: true
   validates :main_image, presence: true
   validates :thumb_image, presence: true
+
+  def self.angular
+    where(subtitle: "Angular")
+  end
+
+  scope :ruby_on_rails_portfols, -> {where(subtitle: "Ruby on Rails")}
 end
