@@ -9,11 +9,12 @@ class PortfolsController < ApplicationController
   end
 
   def ruby_on_rails
-    @portfols = Portfol.ruby_on_rails_portfols  
+    @portfols = Portfol.ruby_on_rails_portfols
   end
 
   def new
     @portfol = Portfol.new
+    3.times { @portfol.technologies.build}
   end
 
   def create
@@ -58,6 +59,6 @@ class PortfolsController < ApplicationController
 
   private
   def portfol_params
-    params.require(:portfol).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+    params.require(:portfol).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
   end
 end
