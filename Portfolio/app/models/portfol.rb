@@ -1,4 +1,6 @@
 class Portfol < ApplicationRecord
+
+  has_many :technologies
   include Placeholder
   validates :title, presence: true
   validates :subtitle, presence: true

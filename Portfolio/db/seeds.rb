@@ -57,3 +57,17 @@ puts "9 Portfolio items created"
 end
 
 puts "1 Portfolio items created"
+
+3.times do |technologies|
+  Technology.create!(
+    name: "Rails",
+    portfol_id: Portfol.last.id
+  )
+end
+
+puts "3 Portfolio items created"
+
+2.times do |technology|
+  Portfol.last.technologies.create!(
+    name: "Ruby")
+end
