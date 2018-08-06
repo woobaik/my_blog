@@ -71,3 +71,5 @@ puts "3 Portfolio items created"
   Portfol.last.technologies.create!(
     name: "Ruby")
 end
+
+puts "2 Portfolio items created!"
