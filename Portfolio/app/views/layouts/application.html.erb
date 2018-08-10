@@ -16,5 +16,9 @@
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 
     <%= yield %>
+
+    <% if session[:source] %>
+    'thanks for visiting me from ' <%= session[:source] %>
+    <% end %>
   </body>
 </html>
