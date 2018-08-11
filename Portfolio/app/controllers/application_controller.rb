@@ -6,9 +6,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:signup, keys: [:name])
     devise_parameter_sanitizer.permit(:registration, keys: [:name])
   end
-  before_action :set_source
-
-  def set_source
-    session[:source] = params[:q] if params[:q]
-  end
+  include SetSource
 end
