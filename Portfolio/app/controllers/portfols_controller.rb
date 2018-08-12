@@ -58,12 +58,17 @@ class PortfolsController < ApplicationController
   end
 
   private
-   #need to update 
+   #need to update
   def set_portfol
 
   end
 
   def portfol_params
-    params.require(:portfol).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
+    params.require(:portfol).permit(:title,
+                                    :subtitle,
+                                    :body,
+                                    :main_image,
+                                    :thumb_image,
+                                    technologies_attributes: [:name])
   end
 end
