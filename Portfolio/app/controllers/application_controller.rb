@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:registration, keys: [:name])
   end
   include SetSource
+
+  def current_user
+    super
+  end
 end
