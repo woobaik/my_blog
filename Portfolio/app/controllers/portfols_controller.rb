@@ -1,5 +1,7 @@
 class PortfolsController < ApplicationController
   before_action :set_portfol, only: [:show, :edit, :destroy, :update]
+  layout "portfolio"
+
   def index
     @portfols = Portfol.all
   end
