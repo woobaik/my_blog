@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:registration, keys: [:name])
   end
   include SetSource
+  include CurrentUserConcern
 
   def current_user
-    super
+    super || guest = OpenStruct.new(name: "Guest User", lastname: "Guest", firstname: "User", email: "pglossy@gmail.com")
   end
 end
