@@ -12,8 +12,4 @@ class ApplicationController < ActionController::Base
   include DefaultPageContent
   include JoungwooViewTool
 
-  def set_copyright
-    @copyright = JoungwooViewTool::Renderer.copyright("Joungwoo Baik", "All rights revserved")
-  end
-
 end
