@@ -1,13 +1,15 @@
 <h1>Portfolio</h1>
 
+<% if logged_in?(:site_admin) %>
 <a href="portfols/new">Create New Item</a>
+<% end %>
 
 <% @portfols.each do |portfol| %>
   <p><%= link_to portfol.title, portfol_path(portfol) %></p>
   <p><%= portfol.subtitle %></p>
   <p><%= portfol.body %></p>
   <p><%= image_tag(portfol.thumb_image) if portfol.thumb_image%></p>
-  <%= link_to "Edit", edit_portfol_path(portfol ) %>
-  <%= link_to "Delete", portfol_url(portfol), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to "Edit", edit_portfol_path(portfol ) if logged_in?(:site_admin) %>
+  <%= link_to "Delete", portfol_url(portfol), method: :delete, data: {confirm: "Are you sure?"} if logged_in?(:site_admin)%>
 
 <% end %>
