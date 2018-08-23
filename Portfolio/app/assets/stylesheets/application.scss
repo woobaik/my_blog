@@ -79,7 +79,7 @@ body {
   border-bottom-color: #fff;
 }
 
-@media (min-width: 80em) {
+@media (min-width: 48em) {
   .masthead-brand {
     float: left;
   }
@@ -107,3 +107,16 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+/*
+ * Custom Styles
+ */
+
+ .card-body {
+   color: black;
+   text-align: left;
+ }
+
+ .auth-links a {
+   color: black;
+ }
